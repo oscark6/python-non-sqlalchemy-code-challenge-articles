@@ -1,7 +1,7 @@
 class Article:
     all = []
 
-    def _init_(self, author, magazine, title):
+    def __init__(self, author, magazine, title):
         if not isinstance(author, Author):
             raise TypeError("author must be of type Author")
         if not isinstance(magazine, Magazine):
@@ -36,7 +36,7 @@ class Article:
         self._magazine = value
         
 class Author:
-    def _init_(self, name):
+    def __init__(self, name):
         if not isinstance(name, str):
             raise TypeError("name must be a string")
         if len(name) == 0:
@@ -73,7 +73,7 @@ class Magazine:
 
     all = []
     
-    def _init_(self, name, category):
+    def __init__(self, name, category):
         if not isinstance(name, str) or not (2 <= len(name) <= 16):
             raise ValueError("name must be a string between 2 and 16 characters")
         self.name = name
